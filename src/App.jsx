@@ -1,9 +1,11 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
+import Button from "./components/button";
 
 function App() {
   const [count, setCount] = useState(0);
+  const [secondCount, setSecondCount] = useState(0);
 
   return (
     <div className="App">
@@ -17,6 +19,10 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
+        <Button
+          action={() => setSecondCount((secondCount) => secondCount + 1)}
+          count={secondCount}
+        />
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
